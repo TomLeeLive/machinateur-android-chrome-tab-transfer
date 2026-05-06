@@ -58,8 +58,8 @@ class CurlTabLoader implements TabLoaderInterface
     final protected function exec(
         ?int    &$capturedErrorCode    = 0,
         ?string &$capturedErrorMessage = null,
-        string  $url     = null,
-        int     $timeout = null,
+        ?string $url     = null,
+        ?int    $timeout = null,
         bool    $isPutRequest     = false,
     ): ?string {
         $url     ??= $this->url;

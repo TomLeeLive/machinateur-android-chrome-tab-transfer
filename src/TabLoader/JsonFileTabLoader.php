@@ -44,7 +44,7 @@ use Symfony\Component\Filesystem\Filesystem;
  * @method $this setInput(InputInterface $input)
  * @method $this setOutput(OutputInterface $output)
  * @method $this setDebug(bool $debug)
- * @method $this setFileDate(?\DateTimeInterface $date)
+ * @method $this setFileDate(?\DateTimeInterface $date, ?string $dateFormat)
  */
 class JsonFileTabLoader implements TabLoaderInterface
 {
@@ -74,7 +74,7 @@ class JsonFileTabLoader implements TabLoaderInterface
 
         // We can only know the actual filename here, as the `--date` flag is injected only later.
         $file = (new JsonFile($this->file, []))
-            ->setFileDate($this->getFileDate())
+            ->setFileDate($this->getFileDate(), $this->getDateFormat())
             ->getFilename();
 
         $console->writeln("Looking for file `{$file}` to load stored tabs... ", OutputInterface::VERBOSITY_VERY_VERBOSE);

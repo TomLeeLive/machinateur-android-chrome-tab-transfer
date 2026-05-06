@@ -43,7 +43,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  * @method $this setConsole(Console $console)
  * @method $this setInput(InputInterface $input)
  * @method $this setOutput(OutputInterface $output)
- * @method $this setFileDate(?\DateTimeInterface $date)
+ * @method $this setFileDate(?\DateTimeInterface $date, ?string $dateFormat)
  */
 abstract class AbstractDriver implements DriverLifecycleInterface, DriverUrlInterface, DriverEnvironmentCheckInterface
 {

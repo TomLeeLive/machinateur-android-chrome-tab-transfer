@@ -164,9 +164,9 @@ class CurlReopenTabLoader extends CurlTabLoader
         return parent::setDebug($debug);
     }
 
-    public function setFileDate(?\DateTimeInterface $date): static
+    public function setFileDate(?\DateTimeInterface $date, ?string $dateFormat): static
     {
-        $this->jsonFileLoader->setFileDate($date);
-        return $this->parent__setFileDate($date);
+        $this->jsonFileLoader->setFileDate($date, $dateFormat);
+        return $this->parent__setFileDate($date, $dateFormat);
     }
 }

@@ -38,7 +38,7 @@ use Symfony\Component\Filesystem\Path;
  * @method AbstractFileTemplate setConsole(Console $console)
  * @method AbstractFileTemplate setInput(InputInterface $input)
  * @method AbstractFileTemplate setOutput(OutputInterface $output)
- * @method AbstractFileTemplate setFileDate(?\DateTimeInterface $date)
+ * @method AbstractFileTemplate setFileDate(?\DateTimeInterface $date, ?string $dateFormat)
  */
 abstract class AbstractFileTemplate implements FileTemplateInterface
 {
@@ -64,7 +64,7 @@ abstract class AbstractFileTemplate implements FileTemplateInterface
         $dir  = \pathinfo($this->file, \PATHINFO_DIRNAME);
 
         if ($this->date) {
-            $file = "{$file}_{$this->date->format(self::DATE_FORMAT)}";
+            $file = "{$file}_{$this->date->format($this->dateFormat ?: self::DATE_FORMAT)}";
         }
         $file = "{$file}{$this->filenameSuffix}.{$this->getExtension()}";
 

@@ -31,14 +31,22 @@ trait FileDateTrait
 {
     protected ?\DateTimeInterface $date = null;
 
+    protected ?string $dateFormat       = null;
+
     public function getFileDate(): ?\DateTimeInterface
     {
         return $this->date;
     }
 
-    public function setFileDate(?\DateTimeInterface $date): static
+    public function getDateFormat(): ?string
     {
-        $this->date = $date;
+        return $this->dateFormat;
+    }
+
+    public function setFileDate(?\DateTimeInterface $date, ?string $dateFormat): static
+    {
+        $this->date       = $date;
+        $this->dateFormat = $dateFormat;
         return $this;
     }
 }
