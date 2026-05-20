@@ -196,7 +196,7 @@ Later on, I noticed that there was real demand for a tool that delivers seamless
 The following commands, arguments and options are available in the `tab-transfer` CLI:
 
 ```
-tab-transfer 0.5.1
+tab-transfer 0.6.0
 
 Usage:
   command [options] [arguments]
